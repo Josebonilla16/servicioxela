@@ -1,0 +1,21 @@
+{% extends 'clientes/base.html' %}
+{% block content %}
+        <div class="cliente">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Telefono</th>
+              </tr>
+            </thead>
+            {% for cliente in clientes %}
+            <tbody>
+              <tr class="table-light">
+                <th scope="row"><h1><a href="{% url 'cliente_detail' pk=cliente.pk %}">{{ cliente.cliente}} </h1></a>
+                </th>
+                <td>{{ cliente.telefono}}</td>
+              </tr>
+            </tbody>{% endfor %}
+          </table>
+        </div>
+{% endblock %}

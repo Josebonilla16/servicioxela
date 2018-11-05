@@ -1,0 +1,8 @@
+{% extends 'tipos/base.html' %}
+{% block content %}
+    <div class="tipo">
+      <h1>Descripcion: {{ tipo.nombre}} </h1>
+      <a class="btn btn-default" href="{% url 'tipo_editar' pk=tipo.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+      <a class="btn btn-default" href="{% url 'tipo_remove' pk=tipo.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+    </div>
+{% endblock %}

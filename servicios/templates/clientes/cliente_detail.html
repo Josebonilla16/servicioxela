@@ -1,0 +1,9 @@
+{% extends 'clientes/base.html' %}
+{% block content %}
+    <div class="carro">
+      <h1>Nombre: {{ cliente.cliente}} </h1>
+      <h5> cliente: {{ cliente.telefono}} </h5>
+      <a class="btn btn-default" href="{% url 'cliente_editar' pk=cliente.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+      <a class="btn btn-default" href="{% url 'cliente_remove' pk=cliente.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+    </div>
+{% endblock %}

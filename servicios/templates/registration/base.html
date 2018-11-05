@@ -1,0 +1,46 @@
+{% load static %}
+<html>
+    <head>
+        <title>Servicios Mecanicos</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.css">
+        <a href="https://en.wikipedia.org/wiki/Django" class="external_link" id="link_to_wiki_page">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+          <a class="navbar-brand" > XELAJU S.A.</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <p class="top-menu">Hola: Iinicia Sesion aqui-> <small>(<a href="{% url 'login' %}">ENTRAR</a>)</small></p>
+
+        </nav>
+    </head>
+    <body>
+        <div class="content container">
+<br>
+<div class="jumbotron">
+  <h1 class="display-3">Bienvenido, al Sistema de Xelaju S.A.!</h1>
+
+  <p class="lead">Los mejores servicios y con los mejores mecanicos de la ciudad Altense.</p>
+  <hr class="my-4">
+  <ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Cambio de Filtro    <span class="badge badge-primary badge-pill">Q. 125</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Cambio de Frenos    <span class="badge badge-primary badge-pill">Q. 250</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+Cambio de Aceite    <span class="badge badge-primary badge-pill">Q. 85</span>
+  </li>
+</ul>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" role="button">Telefono : 7765-8569</a>
+    <a class="btn btn-primary btn-lg" role="button">Email : servicios@xelajuser.com</a>
+    <a class="btn btn-primary btn-lg" role="button">Direccion : 1ra calle 2-44 Zona 7</a>
+  </p>
+</div>
+        </div>
+    </body>
+</html>

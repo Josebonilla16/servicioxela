@@ -1,0 +1,8 @@
+{% extends 'tipos/base.html' %}
+{% block content %}
+        <h1>Nuevo tipo de servicio</h1>
+        <form method="POST" class="post-form">{% csrf_token %}
+            {{ formulario2.as_p }}
+            <button type="submit" class="save btn btn-default">Guardar</button>
+        </form>
+{% endblock %}
