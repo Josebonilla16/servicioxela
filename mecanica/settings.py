@@ -25,7 +25,7 @@ SECRET_KEY = 'j1dwf6+dj3l6$es&8uuwhz80ag$@-85o!o!&xlzv=te&zt10f7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['josebonilla.pythonanywhre.com', '127.0.0.1',]
 
 
 # Application definition
