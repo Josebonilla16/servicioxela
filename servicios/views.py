@@ -33,10 +33,14 @@ def servicio_nuevo (request):
 def carro_edit(request, pk):
     carro = get_object_or_404(Carro, pk=pk)
     if request.method == "POST":
-        formulario = CarroForm(request.POST, request.FILES, instance=carro)
+        formulario = CarroForm(request.POST, instance=carro)
         if formulario.is_valid():
-            carro = formulario.save()
+            carro = formulario.save(commit=False)
             carro.save()
+
+            for servicio_id in request.POST.getlist('servicios'):
+                detalle = Detalle(servicio_id=servicio_id, carro_id = carro.id)
+                detalle.save()
             return redirect('carro_detail', pk=carro.pk)
     else:
         formulario = CarroForm(instance=carro)
