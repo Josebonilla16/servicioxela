@@ -8,12 +8,13 @@ from servicios.models import Cliente, Carro, Servicio, Detalle
 
 
 def list_carro(request):
-    carros=Carro.objects.all()
+    carros= Carro.objects.all()
     return render(request, 'servicios/list_carro.html', {'carros':carros})
 @login_required
 def carro_detail(request, pk):
     carro = get_object_or_404(Carro, pk=pk)
-    return render(request, 'servicios/carro_detail.html', {'carro': carro})
+    servicio = Servicio.objects.all()
+    return render(request, 'servicios/carro_detail.html', {'carro': carro, 'servicio': servicio})
 
 @login_required
 def servicio_nuevo (request):
@@ -32,10 +33,9 @@ def servicio_nuevo (request):
 def carro_edit(request, pk):
     carro = get_object_or_404(Carro, pk=pk)
     if request.method == "POST":
-        formulario = CarroForm(request.POST, instance=carro)
+        formulario = CarroForm(request.POST, request.FILES, instance=carro)
         if formulario.is_valid():
-            carro = formulario.save(commit=False)
-            
+            carro = formulario.save()
             carro.save()
             return redirect('carro_detail', pk=carro.pk)
     else:

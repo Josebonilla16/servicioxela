@@ -25,9 +25,12 @@
                   <td>{{ carro.linea}}</td>
                   <td>{{ carro.modelo}}</td>
                   <td>{{ carro.color}}</td>
-                  <td>{{ carro.servicio.nombre}}</td>
+                  <td>{% for servicio in carro.servicios.all %}
+                    <li>{{ servicio.nombre}}</li>{% endfor %}
+                  </td>
                 </tr>
-              </tbody>{% endfor %}
+              </tbody>
+              {% endfor %}
             </table>
           </div>
         </div>

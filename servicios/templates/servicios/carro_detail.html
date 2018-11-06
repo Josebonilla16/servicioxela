@@ -2,12 +2,19 @@
 {% block content %}
     <div class="carro">
       <h1>Placa: {{ carro.placa}} </h1>
-      <h5> cliente: {{ carro.cliente.cliente}} </h5>
-      <h5> marca: {{ carro.marca}} </h5>
-      <h5> linea: {{ carro.linea}} </h5>
-      <h5> modelo: {{ carro.modelo}} </h5>
-      <h5> color: {{ carro.color}} </h5>
-      <h5> servicio: {{carro.color }} </h5>
+      <h5> cliente: <li>{{ carro.cliente.cliente}} </li></h5>
+      <h5> marca: <li>{{ carro.marca}} </li></h5>
+      <h5> linea: <li>{{ carro.linea}}</li> </h5>
+      <h5> modelo: <li>{{ carro.modelo}} </li></h5>
+      <h5> color: <li>{{ carro.color}} </li></h5>
+      <br>
+      <h5>Servicios aplicados</h5>
+      {% for serv in carro.servicios.all %}
+      <h5>
+      <li>{{ serv.nombre}}</li>
+      </h5>
+    {% endfor %}
+
       <a class="btn btn-default" href="{% url 'carro_edit' pk=carro.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
       <a class="btn btn-default" href="{% url 'carro_remove' pk=carro.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
 
